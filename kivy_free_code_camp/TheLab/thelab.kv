@@ -1,0 +1,264 @@
+CanvasExample6:
+
+<CanvasExample6>:
+    # BoxLayout:
+    #     size: root.size
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: 0, 0, 1
+            Rectangle:
+                size: self.size
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: 1, 1, 1
+            Rectangle:
+                size: self.size
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: 1, 0, 0
+            Rectangle:
+                size: self.size
+                
+<CanvasExample5>:
+    BoxLayout:
+        size: root.size
+        Widget:
+            canvas:
+                Color:
+                    rgb: 0, 1, 0
+                Rectangle:
+                    # text: "Hello"
+                    size: self.size
+        RelativeLayout:
+            canvas:
+                # text: "World"
+                # color: 0, 1, 0
+                # size: self.size
+                Color:
+                    rgb: 0, 1, 1
+                Rectangle:
+                # text: "Hello"
+                    size: self.size
+
+#:set s dp(150)
+# : set sw self.width
+<CanvasExample3>:
+    Button:
+        text: "Alas"
+        pos: 0, dp(300)
+        on_press: root.on_button_click()
+    Label:
+        text: root.text
+        pos: dp(350), dp(500)
+        # font_name:"fonts\Lcd.ttf"
+        font_size: "60dp"
+        # color: 1, .5, 1, 1
+<CanvasExample2>:
+    canvas:
+        Line:
+            points: (0, self.height/2, self.width, self.height/2)
+            width: dp(2)
+        Line:
+            points: (self.width/2, self.height, self.width/2, 0)
+            width: dp(2)
+<CanvasExample1>:
+    canvas:
+        Color:
+            rgb: 1, 0, 0
+        Line:
+            circle: (self.center_x, self.center_y, s)
+            width: dp(5)
+        Line:
+            ellipse: (self.center_x-s, self.center_y-s*3/2, s*2, s*3)
+        Color:
+            rgb: 0, 0, 1
+        Line:
+            rectangle: (self.center_x-s/2, self.center_y-s/2, s, s)
+            # pos: self.center_x-s/2, self.center_y-s/2
+            # size: s, s
+        # Rectangle:
+        #     pos: self.center_x-s/2, self.center_y-s/2
+        #     size: s, s
+        Line:
+            points: (0, 0, self.width/4, 100, self.width/2, 0, self.width*3/4, 100, self.width, 0)
+            width: dp(5)
+
+<ImageExample@BoxLayout>:
+    # cols: 3
+    Image:
+        source:"images/cake.jpg"
+    # allow_stretch:
+
+<WidgetsExample>:
+    cols: 3
+    ToggleButton:
+        text: "OFF"
+        on_state: root.toggle_button_state(self)
+        size_hint: None, 1
+    Button:
+        text: "Click here to count"
+        on_press: root.on_click()
+        disabled: not root.button_state
+    Label:
+        text: root.the_text
+        font_name:"fonts\Lcd.ttf"
+        font_size: "80dp"
+        color: 1, .5, 1, 1
+    Switch:
+        id: Switch
+        on_active: root.on_switch_active(self)
+        size_hint: None, 1
+        width:"100dp"
+        active: True
+    Slider:
+        id: my_slider
+        orientation: "vertical"
+        min: 0
+        max: 100
+        value:"50"
+        disabled: not Switch.active
+        # on_value: root.on_slider_value(self)
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: f"Vol {int(my_slider.value)}"
+            font_size: "40dp"
+        ProgressBar:
+            max: 100
+            value: my_slider.value
+    TextInput:
+        id: my_txt_input
+        size_hint: None, 1
+        width: "100dp"
+        text: ""
+        multiline: False
+        on_text_validate: root.on_txt_validate(self)
+    Label:
+        text: root.txt_input_str
+
+<PageLayoutExample@PageLayout>:
+
+    MainWidget:
+    BoxLayoutExample:
+    AnchorLayoutExample:
+    GridLayoutExample:
+
+<ScrollViewExample@ScrollView>:
+    StackLayoutExample:
+        size_hint: 1, None
+        height: self.minimum_height
+
+<StackLayoutExample>:
+    # right*left-bottom*top
+    # orientation: "rl-bt"
+    # pad: "20dp"
+    # padding: "20dp", "20dp", "20dp", "20dp"
+
+    # Button:
+    #     text: "A"
+    #     size_hint: .3, .3
+    # Button:
+    #     text: "B"
+    #     size_hint: .3, .3
+    # Button:
+    #     text: "C"
+    #     size_hint: .3, .3
+    # Button:
+    #     text: "D"
+    #     size_hint: .3, .3
+    # Button:
+    #     text: "E"
+    #     size_hint: .3, .3
+    # Button:
+    #     text: "F"
+    #     size_hint: .3, .3
+
+<GridLayoutExample@GridLayout>:
+
+    # cols: 3
+    rows: 2
+    Button:
+        text: "A"
+    # Button:
+    #     text: "B"
+    BoxLayoutExample:
+
+    Button:
+        text: "C"
+    Button:
+        text: "D"
+    Button:
+        text: "E"
+    Button:
+        text: "F"
+
+<AnchorLayoutExample>:
+    # orientation = "horizontal"
+    anchor_x: "center"
+    anchor_y: "top"
+    BoxLayout:
+        size_hint: .2, .2
+        Button:
+            text: "A"
+            # size_hint: .1, 1
+        Button:
+            text: "B"
+            # size_hint: .1, 1
+
+<BoxLayoutExample>:
+    orientation: "horizontal"
+    spacing: "10dp"
+    Button:
+        text: "Alas"
+
+        size_hint: 1, 1
+        # size: "100dp", "60dp"
+        # width: "20dp"
+        # height: "10dp"
+        # x, center_x, right
+        # y, center_y, top
+        pos_hint: {"center_x": .5}
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: "10dp"
+        Button:
+            text: "My Button1"
+            color: 0, 2, .6, 1
+            # size_hint: 1, None
+        Button:
+            text: "My Button2"
+            color: 0, 2, .6, 1
+            # size_hint: 1, None
+        Button:
+            text: "My Button3"
+            color: 0, 2, .6, 1
+            # size_hint: 1, None
+        Button:
+            text: "My Button4"
+            color: 0, 2, .6, 1
+            # size_hint: 1, None
+
+    # Button:
+    #     text: "C"
+    Label:
+        text: "Clue"
+
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size: "40dp", "40dp"
+        pos: "50dp", "50dp"
+        color: 0, .4, .6, 1
+
+    Label:
+        text: "Hi-Top"
+        size: "80dp", "40dp"
+        pos: "100dp", "100dp"
+        color: 0, .9, .6, 1
+
+
+        

@@ -1,0 +1,31 @@
+Screen:
+    in_class: text
+    MDLabel:
+        text: "Basic Authentication App"
+        font_style: "H2"
+        pos_hint: {'center_x': 0.6, 'center_y': 0.8}
+        # halign: "center"
+        # valign: "top"
+        # markup: True
+        # color: 
+    MDTextField:
+        # text: ""
+        # text: 'Basic Authentication App'
+        id: text
+        hint_text: 'Enter you password'
+        helper_text: 'Forgot your password?'
+        helper_text_mode: "on_focus" 
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        size_hint_x: None
+        width: 300
+        icon_right: "account-search"
+        required: True
+    MDRaisedButton:
+        text: 'Submit'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        on_press:
+            app.action()
+    MDLabel:
+        text: ''
+        id: show
+        pos_hint: {'center_x': .96, 'center_y': 0.2}
