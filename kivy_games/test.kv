@@ -1,24 +1,29 @@
-# MainWidget:
+MainWidget:
 
-    # BoxLayout:
+    BoxLayout:
 
-    #     orientation: "vertical"
-    #     size: root.width, root.height
-        # BoxLayout:
-        #     Button:
-        #         text: "ZZZ"
+        orientation: "vertical"
+        size: root.width, root.height
+        BoxLayout:
+            Image:
+                source: r"cards\queen_heart.png"
 
-        # BoxLayout:
-            # Color: (1,1,1,1)
-            # cols: 3
-            # Button:
-            #     text: "A"
-            # Button:
-                # text: "B"
-        # Image:
-        #     source: r"C:\Users\flpas\OneDrive\Flpasana\Identifications\ID's\ProfilePic.jpg"
+        BoxLayout:
+            
+
+            Button:
+                Image:
+                    source: r"cards\1_club.png"
+                    pos: "40dp", "120dp"
+                Image:
+                    source: r"cards\queen_club.png"
+                    pos: "55dp", "120dp"
+            Image:
+                source: r"cards\1_spade.png"
             # allow_stretch: True
                 # pos_hint: {'center_x': 0.5, 'center_y': 0.5}
                     # size_hint: 1, 1
-            # Button:
-            #     text: "C"
+            Image:
+                source: r"cards\1_diamond.png"
+            Image:
+                source: r"cards\1_heart.png"

@@ -10,21 +10,22 @@ from kivy.uix.image import Image
 from kivy.core.window import Window
 
 
-class MainWidget(GridLayout):
-    def __init__(self,**kwargs):
-        super(MainWidget, self).__init__(**kwargs)
-        self.cols = 2
+class MainWidget(BoxLayout):
+    # def __init__(self,**kwargs):
+    #     super(MainWidget, self).__init__(**kwargs)
+        # self.cols = 2
 
-        self.add_widget(Label(text="Hello"))
-        self.greeting = TextInput(multiline=False)
-        self.add_widget(self.greeting)
+        # self.add_widget(Image(source = r"\cards\\1_club.png"))
+        # self.greeting = TextInput(multiline=False)
+        # self.add_widget(self.greeting)
+    pass
 
 
 class TestApp(App):
-    def build(self):
+    # def build(self):
     #     Window.clearcolor = (1,1,1,1)
-        return MainWidget()
-    # pass
+        # return MainWidget()
+    pass
 
 if __name__ == '__main__':
     app = TestApp()
