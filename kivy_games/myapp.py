@@ -8,6 +8,14 @@ from kivy.uix.button import Button
 from kivy.uix.widget import Widget
 from kivy.uix.image import Image
 from kivy.core.window import Window
+from kivy.graphics.vertex_instructions import Line, Rectangle, Ellipse
+
+from kivy.utils import get_color_from_hex
+from kivy.graphics import Color, Rectangle
+from kivy.lang import Builder
+from kivy.base import runTouchApp
+
+Window.clearcolor = (0, .3, 0.2, 1.0)
 
 
 class MainWidget(BoxLayout):

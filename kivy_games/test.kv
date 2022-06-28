@@ -1,29 +1,117 @@
 MainWidget:
 
+<MainWidget>:
+
+    # background_color: '#00FFCE'
+    # background_color: 0, 0, 1, 0
+    orientation: "vertical"
+    size: root.width, root.height
+    GridLayout:
+        cols: 2
+        size_hint: 1, 0.5
+        Image:
+            source: r"cards\queen_heart.png"
+        Label:
+            text: "text"
+            # color:
+
+    Label:
+        # clearcolor: (1, 1, 1, 1.0)
+        background_color: 1, 1, 1, 1
+        background_normal: ""
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0, 0.5
+            Line:    # --- adds a border --- #
+                width: .5
+                rectangle: self.x, self.y, self.width, self.height
+        size_hint: 1, .3
+        text: "Label"
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        # color: 1,1,1,1
+        # color: '#00FFCE'
+
     BoxLayout:
 
-        orientation: "vertical"
-        size: root.width, root.height
-        BoxLayout:
-            Image:
-                source: r"cards\queen_heart.png"
-
-        BoxLayout:
-            
-
-            Button:
-                Image:
-                    source: r"cards\1_club.png"
-                    pos: "40dp", "120dp"
-                Image:
-                    source: r"cards\queen_club.png"
-                    pos: "55dp", "120dp"
-            Image:
-                source: r"cards\1_spade.png"
-            # allow_stretch: True
-                # pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-                    # size_hint: 1, 1
-            Image:
-                source: r"cards\1_diamond.png"
+        # cols: 4
+        # padding:"5dp"
+        # spacing: "80dp"
+        # Button:
+        #     background_color: 0, .3, 0.2, 1.0
+        GridLayout:
+            background_color: 0, .3, 0.2, 1.0
+            cols: 2
+            rows: 2
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0.5
+                Line:    # --- adds a border --- #
+                    width: .5
+                    rectangle: self.x, self.y, self.width, self.height
             Image:
                 source: r"cards\1_heart.png"
+            Image:
+                source: r"cards\queen_heart.png"
+            Image:
+                source: r"cards\king_heart.png"
+            Label:
+                text: "Kim"
+        # Button:
+        #     background_color: 0, .3, 0.2, 1.0
+        GridLayout:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0.5
+                Line:    # --- adds a border --- #
+                    width: .5
+                    rectangle: self.x, self.y, self.width, self.height
+            cols: 2
+            rows: 2
+            Image:
+                source: r"cards\1_club.png"
+            Image:
+                source: r"cards\queen_club.png"
+            Image:
+                source: r"cards\back.png"
+            Label:
+                text: "Kim"
+        # Button:
+        #     background_color: 0, .3, 0.2, 1.0
+        GridLayout:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0.5
+                Line:    # --- adds a border --- #
+                    width: .5
+                    rectangle: self.x, self.y, self.width, self.height
+            cols: 2
+            rows: 2
+            Image:
+                source: r"cards\1_spade.png"
+            Image:
+                source: r"cards\queen_spade.png"
+            Image:
+                source: r"cards\back.png"
+            Label:
+                text: "Kim"
+        # Button:
+        #     background_color: 0, .3, 0.2, 1.0
+        GridLayout:
+            cols: 2
+            rows: 2
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0.5
+                Line:    # --- adds a border --- #
+                    width: .5
+                    rectangle: self.x, self.y, self.width, self.height
+            Image:
+                source: r"cards\1_diamond.png"
+                # allow_stretch: True
+                # keep_ratio: False
+            Image:
+                source: r"cards\queen_diamond.png"
+            Image:
+                source: r"cards\back.png"
+            Label:
+                text: "Kim"
