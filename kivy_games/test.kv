@@ -16,9 +16,9 @@ MainWidget:
             # color:
 
     Label:
-        # clearcolor: (1, 1, 1, 1.0)
+        clearcolor: (1, 1, 1, 1.0)
         background_color: 1, 1, 1, 1
-        background_normal: ""
+        # background_normal: ""
         canvas.before:
             Color:
                 rgba: 0, 0, 0, 0.5
@@ -39,23 +39,36 @@ MainWidget:
         # Button:
         #     background_color: 0, .3, 0.2, 1.0
         GridLayout:
-            background_color: 0, .3, 0.2, 1.0
-            cols: 2
-            rows: 2
+            # background_color: 0, .3, 0.2, 1.0
+            cols: 1
+            # rows: 2
+            # orientation: "vertical"
             canvas.before:
                 Color:
                     rgba: 0, 0, 0, 0.5
                 Line:    # --- adds a border --- #
                     width: .5
                     rectangle: self.x, self.y, self.width, self.height
-            Image:
-                source: r"cards\1_heart.png"
-            Image:
-                source: r"cards\queen_heart.png"
-            Image:
-                source: r"cards\king_heart.png"
+            Label: 
+                text: "Player 1's hand"
+                # pos_hint: {'center_x': 0.}
+                size_hint: 1, .2
+            BoxLayout:
+                # cols: 2
+                Image:
+                    source: r"cards\1_heart.png"
+                    # size_hint: .8, .5
+                    # pos: self.x + 50, self.y + 50
+                    # pos_hint: {'x': 0.25, 'y': 0.5}
+                Image:
+                    source: r"cards\queen_heart.png"
+                    # pos_hint: {'x': 0.5, 'y': 0}
+                    # pos: (50, 50)
+                Image:
+                    source: r"cards\king_heart.png"
             Label:
                 text: "Kim"
+                size_hint: 1, .2
         # Button:
         #     background_color: 0, .3, 0.2, 1.0
         GridLayout:

@@ -15,10 +15,12 @@ from kivy.graphics import Color, Rectangle
 from kivy.lang import Builder
 from kivy.base import runTouchApp
 
+
 Window.clearcolor = (0, .3, 0.2, 1.0)
 
 
 class MainWidget(BoxLayout):
+    import lucky_Nine
     # def __init__(self,**kwargs):
     #     super(MainWidget, self).__init__(**kwargs)
         # self.cols = 2
@@ -26,7 +28,7 @@ class MainWidget(BoxLayout):
         # self.add_widget(Image(source = r"\cards\\1_club.png"))
         # self.greeting = TextInput(multiline=False)
         # self.add_widget(self.greeting)
-    pass
+    # pass
 
 
 class TestApp(App):
